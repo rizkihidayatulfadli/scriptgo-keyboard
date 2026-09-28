@@ -1,0 +1,14 @@
+{
+  "name": "magic-keyboard-site",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "node build.mjs",
+    "e2e": "node e2e/run.mjs"
+  },
+  "devDependencies": {
+    "marked": "^18.0.14",
+    "playwright": "1.56.1"
+  }
+}

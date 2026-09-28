@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Berlangganan ScriptGo Pro</title>
+<meta name="description" content="Berlangganan ScriptGo Pro: template dan pemakaian tanpa batas, sync, dan Chrome extension. Bayar dengan QRIS, virtual account, atau e-wallet." />
+<link rel="canonical" href="https://scriptgo.id/bayar" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0B1220" />
+<link rel="icon" href="favicon.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="landing.css" />
+<link rel="stylesheet" href="signup.css" />
+</head>
+<body class="landing signup">
+<header class="bar"><a class="brand" href="./"><img src="mark.svg" alt="" width="32" height="32" /> ScriptGo</a></header>
+<main class="card-wrap">
+  <!-- 1. Email → 2. code: sign in to the same account as the app. -->
+  <form id="email-step" class="card" novalidate>
+    <span class="eyebrow-soft">ScriptGo Pro</span>
+    <h1>Berlangganan Pro</h1>
+    <p class="muted">Masuk dengan email akun ScriptGo kamu (sama dengan di app HP). Kami kirim kode 6 digit ke email itu.</p>
+    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required placeholder="rina@gmail.com" /></div>
+    <button class="btn grad full" type="submit" id="send-code">Kirim kode</button>
+    <p class="msg" id="email-msg" role="status" aria-live="polite"></p>
+  </form>
+  <form id="code-step" class="card" novalidate hidden>
+    <h1>Masukkan kode</h1>
+    <p class="muted">Kode 6 digit sudah dikirim ke <b id="code-email"></b>. Tidak ada? Cek folder Spam atau Promosi.</p>
+    <div class="field"><label for="code">Kode dari email</label><input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456" /></div>
+    <button class="btn grad full" type="submit" id="verify">Masuk</button>
+    <button class="btn ghost full" type="button" id="change-email">Ganti email</button>
+    <p class="msg" id="code-msg" role="status" aria-live="polite"></p>
+  </form>
+  <!-- 3. Choose a plan → Duitku's payment page. -->
+  <section id="plans-step" class="card" hidden>
+    <span class="eyebrow-soft" id="plans-account"></span>
+    <h1>Pilih paket Pro</h1>
+    <p class="muted" id="plans-note">Template dan pemakaian tanpa batas, sync antar HP, Chrome extension, dan AI 20 kali sehari.</p>
+    <div class="plans" id="plans" role="radiogroup" aria-label="Paket"></div>
+    <button class="btn grad full" type="button" id="pay" disabled>Bayar</button>
+    <p class="msg" id="plans-msg" role="status" aria-live="polite"></p>
+    <p class="fine">Pembayaran lewat Duitku: QRIS, virtual account, atau e-wallet. Pro aktif otomatis setelah pembayaran diterima, dan ditambahkan ke sisa Pro kamu. Tidak diperpanjang otomatis. <a href="privacy.html">Kebijakan privasi</a>.</p>
+    <button class="btn ghost small" type="button" id="sign-out">Bukan akun kamu? Keluar</button>
+  </section>
+  <!-- 4. Back from Duitku: /bayar?order=SG-… -->
+  <section id="order-step" class="card center" hidden>
+    <div class="icon-ok order-icon" id="order-icon" data-state="wait" aria-hidden="true">
+      <svg class="i-wait" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <svg class="i-ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <svg class="i-fail" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </div>
+    <h1 id="order-title">Mengecek pembayaran…</h1>
+    <p id="order-text" class="muted"></p>
+    <a class="btn ghost full" id="order-again" href="bayar" hidden>Coba bayar lagi</a>
+  </section>
+</main>
+<footer class="foot"><div class="links"><a href="./">Beranda</a><a href="privacy.html">Kebijakan privasi</a><a href="mailto:halo@scriptgo.id">halo@scriptgo.id</a></div></footer>
+<script src="bayar.js" defer></script>
+</body>
+</html>

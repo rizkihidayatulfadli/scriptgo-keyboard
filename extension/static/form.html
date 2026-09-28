@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isi template</title>
+  <link rel="stylesheet" href="ui.css" />
+  <style>
+    html, body { background: transparent; margin: 0; height: 100%; }
+    #backdrop { position: fixed; inset: 0; background: rgba(14, 17, 22, .32); display: flex; align-items: center; justify-content: center; padding: 16px; }
+    #app { width: min(440px, 100%); max-height: min(560px, calc(100vh - 32px)); display: flex; flex-direction: column; overflow: hidden; }
+    #app > * { flex: 0 0 auto; }
+    /* Header and buttons stay put; only the middle scrolls when the form is long. */
+    #app > .form-scroll { flex: 1 1 auto; min-height: 0; overflow: auto; display: grid; gap: 14px; align-content: start; margin: 0 -20px; padding: 2px 20px; }
+    #app > .contacts { flex: 1 1 auto; min-height: 0; }
+    #app > .actions { margin: 0 -20px; padding: 12px 20px 0; border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div id="backdrop"><main id="app" class="card"><p class="empty">Memuat…</p></main></div>
+  <script src="form.js" type="module"></script>
+</body>
+</html>

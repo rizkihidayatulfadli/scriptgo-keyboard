@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- magic-keyboard: Android backup and device transfer (Android 12+), as scriptgo_backup_rules.xml:
+     everything except the sign-in tokens in sync.xml. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="sync.xml" />
+        <exclude domain="device_sharedpref" path="sync.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="sync.xml" />
+        <exclude domain="device_sharedpref" path="sync.xml" />
+    </device-transfer>
+</data-extraction-rules>

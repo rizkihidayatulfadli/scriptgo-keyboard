@@ -1,0 +1,43 @@
+/* ScriptGo tokens (design/tokens.json) and Urbanist (OFL, see fonts/OFL.txt). */
+@font-face { font-family: "Urbanist"; font-weight: 400; font-display: swap; src: url(fonts/urbanist-400.woff2) format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 500; font-display: swap; src: url(fonts/urbanist-500.woff2) format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 600; font-display: swap; src: url(fonts/urbanist-600.woff2) format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 700; font-display: swap; src: url(fonts/urbanist-700.woff2) format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 800; font-display: swap; src: url(fonts/urbanist-800.woff2) format("woff2"); }
+:root {
+  --accent-start: #0ea5e9; --accent-end: #6366f1; --accent: #0369a1; --accent-bg: #e0f2fe;
+  --ink: #0e1116; --on-ink: #ffffff; --bg: #eef2f6; --card: #ffffff; --line: #e3e8ef; --muted: #5b6675; --glow: #bae6fd;
+  --gradient: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --accent: #38bdf8; --accent-bg: #0c3350; --ink: #eef2f6; --on-ink: #0e1116; --bg: #0f1318; --card: #1a2028; --line: #2a323d; --muted: #98a4b3; --glow: #075985; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 500 16px/1.65 "Urbanist", system-ui, sans-serif; overflow-x: hidden; }
+/* Sky and indigo glows behind the header, as in the app. */
+body::before, body::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+body::before { top: -180px; right: -140px; width: 520px; height: 460px; background: radial-gradient(closest-side, var(--glow), transparent); opacity: .9; }
+body::after { top: 60px; left: -200px; width: 420px; height: 380px; background: radial-gradient(closest-side, rgba(56, 189, 248, .22), transparent); }
+header, main, footer { max-width: 760px; margin: 0 auto; padding: 16px; }
+header { padding-top: 24px; }
+header a { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; color: var(--ink); letter-spacing: -.01em; }
+header a:hover { text-decoration: none; }
+a { color: var(--accent); text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; line-height: 1.12; letter-spacing: -.03em; margin: .4em 0 .5em; }
+h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.01em; margin-top: 2em; }
+h3 { font-weight: 700; }
+strong { font-weight: 700; }
+code { font-size: .88em; background: var(--accent-bg); color: var(--accent); border-radius: 8px; padding: .1em .45em; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: .95rem; display: block; overflow-x: auto; background: var(--card); border-radius: 22px; border: 1px solid var(--line); }
+th, td { border-bottom: 1px solid var(--line); padding: 12px 14px; text-align: left; vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+footer { color: var(--muted); margin-top: 40px; padding-bottom: 40px; font-size: .9rem; }
+footer a { color: var(--muted); }
+
+/* Document pages (privacy, account deletion): the text sits on one white card. */
+main.doc { background: var(--card); border-radius: 28px; padding: 28px clamp(20px, 5vw, 44px); box-shadow: 0 18px 50px rgba(14, 17, 22, .08); }
+main.doc h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); margin-top: .2em; }
+

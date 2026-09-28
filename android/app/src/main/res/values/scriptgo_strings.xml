@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- magic-keyboard: ScriptGo strings kept out of HeliBoard's strings.xml to ease upstream merges. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="theme_name_scriptgo" translatable="false" tools:keep="@string/theme_name_scriptgo">ScriptGo</string>
+    <string name="theme_name_scriptgo_dark" translatable="false" tools:keep="@string/theme_name_scriptgo_dark">ScriptGo Gelap</string>
+</resources>

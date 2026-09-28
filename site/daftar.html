@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Daftar beta ScriptGo</title>
+<meta name="description" content="Daftar beta gratis ScriptGo: keyboard template untuk seller dan CS. Cukup email, lalu konfirmasi lewat link yang kami kirim." />
+<link rel="canonical" href="https://scriptgo.id/daftar" />
+<meta property="og:title" content="Daftar beta ScriptGo" />
+<meta property="og:description" content="Gratis selama beta. Cukup email." />
+<meta property="og:image" content="https://scriptgo.id/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0B1220" />
+<link rel="icon" href="favicon.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="landing.css" />
+<link rel="stylesheet" href="signup.css" />
+</head>
+<body class="landing signup">
+<header class="bar"><a class="brand" href="./"><img src="mark.svg" alt="" width="32" height="32" /> ScriptGo</a></header>
+<main class="card-wrap">
+  <form id="signup" class="card" novalidate>
+    <span class="eyebrow-soft">Beta gratis</span>
+    <h1>Daftar beta ScriptGo</h1>
+    <p class="muted">Gratis selama beta. Setelah rilis, Pro jadi Rp24.500/bulan selama 12 bulan untuk pendaftar beta.</p>
+    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required placeholder="rina@gmail.com" /><small>Pakai email akun Google yang ada di perangkat Android kamu, supaya bisa kami undang lewat Google Play.</small></div>
+    <div class="field"><label for="wa">WhatsApp <span class="opt">boleh dikosongkan</span></label><input id="wa" inputmode="tel" autocomplete="tel" placeholder="0812 3456 7890" /></div>
+    <div class="field"><span class="flabel" id="device-label">Perangkat kamu <span class="opt">boleh pilih lebih dari satu</span></span>
+      <div class="chips multi" role="group" aria-labelledby="device-label">
+        <button type="button" data-device="android" aria-pressed="true">Android</button><button type="button" data-device="iphone" aria-pressed="false">iPhone</button><button type="button" data-device="laptop" aria-pressed="false">Laptop / PC</button>
+      </div>
+      <small>Beta pertama untuk Android lewat Google Play. Pilihanmu membantu kami memutuskan kapan versi iPhone dibuat.</small>
+    </div>
+    <button class="btn grad full" type="submit" id="submit">Daftar</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    <p class="fine">Kami hanya memakai emailmu untuk urusan ScriptGo. Lihat <a href="privacy.html">kebijakan privasi</a>.</p>
+  </form>
+  <div id="sent" class="card center" hidden>
+    <div class="icon-ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m22 7-8.99 5.73a2 2 0 0 1-2.01 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+    <h1>Cek email kamu</h1>
+    <p>Kami kirim link konfirmasi ke <b id="sent-email"></b>. Klik link itu untuk menyelesaikan pendaftaran.</p>
+    <p class="muted">Tidak ada? Cek folder Spam atau Promosi.</p>
+    <button class="btn ghost full" type="button" id="resend" disabled>Kirim ulang</button>
+    <p class="msg" id="sent-msg" role="status" aria-live="polite"></p>
+  </div>
+</main>
+<footer class="foot"><div class="links"><a href="./">Beranda</a><a href="privacy.html">Kebijakan privasi</a><a href="mailto:halo@scriptgo.id">halo@scriptgo.id</a></div></footer>
+<script src="supabase.js" defer></script>
+<script src="daftar.js" defer></script>
+</body>
+</html>

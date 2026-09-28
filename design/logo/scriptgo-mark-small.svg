@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- ScriptGo logo C2, small sizes (under 24 px): the keycap without the gloss with the template trigger "/". Geometry: docs/superpowers/specs/2026-09-27-scriptgo-visual-identity-design.md -->
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0284C7"/><stop offset="1" stop-color="#4F46E5"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0EA5E9"/><stop offset="1" stop-color="#6366F1"/></linearGradient>
+  </defs>
+  <rect x="8" y="16" width="84" height="76" rx="24" fill="url(#base)"/>
+  <rect x="14" y="8" width="72" height="68" rx="20" fill="url(#top)"/>
+  <path d="M59 24 43 60" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+</svg>

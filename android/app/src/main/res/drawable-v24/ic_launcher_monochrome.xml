@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- magic-keyboard: one-colour ScriptGo keycap for Android 13+ themed icons (design/logo/scriptgo-mark-mono.svg). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:translateX="25" android:translateY="25" android:scaleX="0.58" android:scaleY="0.58">
+        <path android:pathData="M34,11.5h32a16.5,16.5 0,0 1,16.5 16.5v28a16.5,16.5 0,0 1,-16.5 16.5h-32a16.5,16.5 0,0 1,-16.5 -16.5v-28a16.5,16.5 0,0 1,16.5 -16.5z"
+            android:strokeColor="#FF000000" android:strokeWidth="7" android:strokeLineJoin="round" />
+        <path android:pathData="M11.5,58v10a20.5,20.5 0,0 0,20.5 20.5h36a20.5,20.5 0,0 0,20.5 -20.5v-10"
+            android:strokeColor="#FF000000" android:strokeWidth="7" android:strokeLineCap="round" android:strokeLineJoin="round" />
+        <path android:pathData="M58,26L44,58" android:strokeColor="#FF000000" android:strokeWidth="9" android:strokeLineCap="round" />
+    </group>
+</vector>

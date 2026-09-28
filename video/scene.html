@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<!-- Motion graphic scenes for the ScriptGo promo videos. render.mjs opens this page at 1080×1920,
+     1080×1080, or 1920×1080, calls render(t) for every frame, and encodes the screenshots.
+     Open it in a browser with ?story=15&t=4.2 to look at one moment. -->
+<link rel="stylesheet" href="scene.css" />
+</head>
+<body>
+<div id="stage">
+  <div class="bg"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div>
+
+  <div id="captions"></div>
+
+  <div id="pile"></div>
+  <div id="counter"><b id="count">0</b><span>chat hari ini</span></div>
+
+  <div id="phone-wrap">
+    <div id="phone">
+      <div class="screen">
+        <div class="chat-head"><span class="av">R</span><div><b>Rina</b><small>online</small></div></div>
+        <div class="msgs" id="msgs"></div>
+        <div class="strip" id="strip"><span class="chip" id="chip"><b id="chip-key"></b> <span id="chip-title"></span></span></div>
+        <div class="composer"><span id="typed"></span><i class="caret" id="caret"></i><span class="ph" id="ph">Ketik pesan</span></div>
+        <div class="kb">
+          <div class="row"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i></div>
+          <div class="row"><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i></div>
+          <div class="row"><i class="w">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i>m</i><i class="w">⌫</i></div>
+          <div class="row"><i class="w">?123</i><i class="k" id="slash-key">/</i><i class="space">ScriptGo</i><i class="w">↵</i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="stat">
+    <div class="stat-row"><span class="stat-label">Manual</span><b id="stat-manual">40 detik</b></div>
+    <div class="stat-row win"><span class="stat-label">Dengan ScriptGo</span><b id="stat-fast">5 detik</b></div>
+    <p id="stat-note">per balasan. 50 chat sehari = hemat <b id="stat-saved">± 29 menit</b></p>
+  </div>
+
+  <div id="end">
+    <img src="../site/static/mark.svg" alt="" class="mark" />
+    <div class="word">ScriptGo</div>
+    <p class="tagline">Keyboard template untuk seller &amp; CS</p>
+    <div class="cta">Daftar beta gratis</div>
+    <p class="url">scriptgo.id</p>
+  </div>
+</div>
+<script src="scene.js"></script>
+</body>
+</html>

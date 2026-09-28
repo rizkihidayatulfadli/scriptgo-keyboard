@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ScriptGo: balas chat pelanggan dalam hitungan detik</title>
+<meta name="description" content="Keyboard Android dan Chrome extension untuk seller, CS, dan admin. Ketik /ongkir, dan balasan lengkap dengan nama dan kota pelanggan langsung jadi. Ikut beta gratis." />
+<link rel="canonical" href="https://scriptgo.id/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ScriptGo" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:title" content="ScriptGo: balas chat pelanggan dalam hitungan detik" />
+<meta property="og:description" content="Ketik /ongkir, balasan lengkap dengan nama dan kota pelanggan langsung jadi. Keyboard template untuk seller dan CS. Ikut beta gratis." />
+<meta property="og:image" content="https://scriptgo.id/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://scriptgo.id/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ScriptGo: balas chat pelanggan dalam hitungan detik" />
+<meta name="twitter:description" content="Keyboard template untuk seller dan CS. Ikut beta gratis." />
+<meta name="twitter:image" content="https://scriptgo.id/og.png" />
+<meta name="theme-color" content="#0B1220" />
+<link rel="icon" href="favicon.png" />
+<link rel="preload" href="fonts/urbanist-800.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/urbanist-500.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/urbanist-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="landing.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ScriptGo","operatingSystem":"Android, Chrome","applicationCategory":"BusinessApplication","description":"Keyboard Android dan Chrome extension dengan template balasan dan kontak pelanggan untuk seller, CS, dan admin.","url":"https://scriptgo.id/","offers":[{"@type":"Offer","name":"Gratis","price":"0","priceCurrency":"IDR"},{"@type":"Offer","name":"Pro","price":"49000","priceCurrency":"IDR"}]}
+</script>
+<!--faq-jsonld-->
+</head>
+<body class="landing">
+<a class="skip" href="#main">Langsung ke isi</a>
+
+<header class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="top">
+    <a class="brand" href="./"><img src="mark.svg" alt="" width="34" height="34" /> ScriptGo</a>
+    <div class="links"><a href="#cara">Cara kerja</a><a href="#fitur">Fitur</a><a href="#harga">Harga</a><a href="#faq">FAQ</a></div>
+    <a class="btn small light" href="daftar" data-cta>Daftar beta</a>
+  </nav>
+  <div class="hero-grid">
+    <div class="copy">
+      <span class="eyebrow"><i></i>Beta gratis untuk seller &amp; CS</span>
+      <h1 id="hero-title" data-variant="a"><span class="t">Balas chat pelanggan</span> <span class="gradient t2">dalam hitungan detik</span></h1>
+      <p class="lead" id="hero-sub">Keyboard Android dan Chrome extension yang mengubah shortcut jadi balasan lengkap, sudah berisi nama dan kota pelanggan.</p>
+      <script>
+        // Headline A/B test (docs/superpowers/specs/2026-09-28-hero-ab-test-design.md). Runs before the
+        // first paint so the headline never flickers. Each visitor keeps one random id and one variant
+        // in localStorage; ?v=a or ?v=b previews a version without being counted.
+        window.ScriptGoAB = (() => {
+          const EXPERIMENT = "hero-1";
+          const HEADLINES = {
+            a: ["Balas chat pelanggan", "dalam hitungan detik", "Keyboard Android dan Chrome extension yang mengubah shortcut jadi balasan lengkap, sudah berisi nama dan kota pelanggan."],
+            b: ["Ketik /ongkir,", "balasan lengkap langsung jadi", "Keyboard Android dan Chrome extension untuk seller dan CS. Nama dan kota pelanggan terisi sendiri."],
+          };
+          let saved = null, storage = true;
+          try { saved = JSON.parse(localStorage.getItem("sg_hero") || "null"); } catch { storage = false; }
+          const forced = new URLSearchParams(location.search).get("v");
+          let variant = HEADLINES[forced] ? forced : saved && saved.e === EXPERIMENT && HEADLINES[saved.v] ? saved.v : null;
+          let visitor = saved && /^[0-9a-f-]{36}$/.test(saved.id) ? saved.id : null;
+          if (!variant) variant = crypto.getRandomValues(new Uint8Array(1))[0] < 128 ? "a" : "b";
+          if (!visitor && crypto.randomUUID) visitor = crypto.randomUUID();
+          if (!visitor) storage = false; // very old browser: show a variant, count nothing
+          if (!HEADLINES[forced]) {
+            try { localStorage.setItem("sg_hero", JSON.stringify({ e: EXPERIMENT, v: variant, id: visitor })); } catch { storage = false; }
+          }
+          const [t1, t2, sub] = HEADLINES[variant];
+          const title = document.getElementById("hero-title");
+          title.dataset.variant = variant;
+          title.querySelector(".t").textContent = t1;
+          title.querySelector(".t2").textContent = t2;
+          document.getElementById("hero-sub").textContent = sub;
+          // Counted only when the visitor keeps the same id across pages and was not previewing.
+          return { experiment: EXPERIMENT, variant, visitor, counted: storage && !HEADLINES[forced] };
+        })();
+      </script>
+      <div class="ctas">
+        <a class="btn grad" href="daftar" data-cta>Daftar beta gratis</a>
+        <a class="btn ghost-dark" href="#demo">Coba demonya</a>
+      </div>
+      <p class="fine">Jalan di WhatsApp, WA Business, Instagram, TikTok, Shopee Chat.</p>
+    </div>
+
+    <div class="demo" id="demo">
+      <div class="phone">
+        <div class="screen">
+          <div class="chat-head"><span class="av" aria-hidden="true">R</span><div><b>Rina</b><small>online</small></div></div>
+          <div class="msgs">
+            <div class="bubble in" id="demo-ask">Kak, ongkir ke Bandung berapa?</div>
+            <div class="bubble out" id="demo-reply" aria-live="polite">Halo Kak Rina, ongkir ke Bandung Rp18.000 via JNE (2–3 hari). Mau langsung diproses?</div>
+          </div>
+          <div class="strip" id="demo-strip" aria-hidden="true"><span class="chip best"><b id="demo-key">/ongkir</b> <span id="demo-title">Info ongkir</span></span></div>
+          <div class="composer" aria-hidden="true"><span id="demo-typed"></span><i class="caret"></i><span class="ph" id="demo-ph">Ketik pesan</span></div>
+          <div class="kb" aria-hidden="true">
+            <div class="row"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i></div>
+            <div class="row"><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i></div>
+            <div class="row"><i class="w">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i>m</i><i class="w">⌫</i></div>
+            <div class="row"><i class="w">?123</i><i class="k">/</i><i class="space">ScriptGo</i><i class="w">↵</i></div>
+          </div>
+        </div>
+      </div>
+      <div class="try" role="group" aria-label="Coba template">
+        <span>Coba ketuk:</span>
+        <button type="button" data-t="ongkir" aria-pressed="true">/ongkir</button>
+        <button type="button" data-t="rekening" aria-pressed="false">/rekening</button>
+        <button type="button" data-t="salam" aria-pressed="false">/salam</button>
+        <button type="button" data-t="followup" aria-pressed="false">/followup</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="problem" aria-labelledby="h-problem">
+  <div class="split">
+    <div data-reveal>
+      <p class="label">Masalahnya</p>
+      <h2 id="h-problem">Chat yang sama, dibalas 50 kali sehari?</h2>
+      <p class="big">Ongkir berapa? Rekeningnya apa? Masih ada? Pertanyaan yang sama datang terus, dan kamu mengetik jawaban yang sama terus.</p>
+      <p class="muted">Dengan ScriptGo, tiap jawaban cukup satu ketukan.</p>
+    </div>
+    <ol class="pile" id="pile" aria-label="Contoh chat berulang yang dibalas dengan ScriptGo">
+      <li><span class="q">Kak, ongkir ke Medan berapa?</span><span class="a">/ongkir → terkirim</span></li>
+      <li><span class="q">Rekeningnya apa kak?</span><span class="a">/rekening → terkirim</span></li>
+      <li><span class="q">Yang hitam masih ada?</span><span class="a">/stok → terkirim</span></li>
+      <li><span class="q">Bisa COD nggak?</span><span class="a">/cod → terkirim</span></li>
+      <li><span class="q">Paketku udah dikirim?</span><span class="a">/resi → terkirim</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="saver" aria-labelledby="h-saver">
+  <div class="saver-card" data-reveal>
+    <div>
+      <p class="label">Kalkulator</p>
+      <h2 id="h-saver">Berapa waktu yang kamu hemat?</h2>
+      <p class="muted">Satu balasan lengkap diketik manual kira-kira 40 detik. Dengan template, 5 detik.</p>
+    </div>
+    <div class="calc">
+      <label for="chats">Chat yang kamu balas per hari: <output id="chats-out">50</output></label>
+      <input id="chats" type="range" min="10" max="300" step="10" value="50" />
+      <div class="result"><b id="saved">± 29 menit</b><span>lebih cepat setiap hari, atau <b id="saved-month">± 14,6 jam</b> sebulan.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cara" aria-labelledby="h-cara">
+  <p class="label" data-reveal>Cara kerja</p>
+  <h2 id="h-cara" data-reveal>Tiga langkah, tanpa pindah aplikasi</h2>
+  <ol class="steps">
+    <li data-reveal style="--i:0">
+      <span class="step-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg></span>
+      <b>Simpan template sekali</b>Salam, info ongkir, nomor rekening, follow-up. Tambahkan <code>{nama}</code> atau <code>{kota}</code> supaya terisi sendiri.
+    </li>
+    <li data-reveal style="--i:1">
+      <span class="step-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg></span>
+      <b>Ketik / di kolom chat mana saja</b>Ketik <kbd>/</kbd> dan beberapa huruf. Template yang cocok muncul di atas keyboard.
+    </li>
+    <li data-reveal style="--i:2">
+      <span class="step-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 21.7a.5.5 0 0 0 .9-.1l6.5-19a.5.5 0 0 0-.6-.6l-19 6.5a.5.5 0 0 0-.1.9l7.9 3.2a2 2 0 0 1 1.1 1.1z"/><path d="m21.9 2.1-10.9 10.9"/></svg></span>
+      <b>Ketuk, balasan terkirim</b>Pilih pelanggan, dan nama, kota, atau ongkir terisi otomatis. Kamu tetap yang menekan kirim.
+    </li>
+  </ol>
+  <!-- The video loads only when played (scriptgo-30s.mp4 is rendered by video/render.mjs). -->
+  <div class="watch" data-reveal>
+    <button type="button" id="watch" aria-label="Putar video ScriptGo, 30 detik">
+      <img src="video/scriptgo-30s-poster.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+      <span class="watch-label">Tonton 30 detik</span>
+    </button>
+  </div>
+</section>
+
+<section id="fitur" aria-labelledby="h-fitur">
+  <p class="label" data-reveal>Fitur</p>
+  <h2 id="h-fitur" data-reveal>Dibuat untuk yang membalas puluhan chat sehari</h2>
+
+  <div class="feature" data-reveal>
+    <div class="f-copy">
+      <h3>Nama dan kota pelanggan terisi sendiri</h3>
+      <p>Simpan kontak dengan kota, ukuran, atau nomor resi. Template memakai data itu, jadi tiap balasan terasa personal tanpa mengetik ulang.</p>
+    </div>
+    <div class="f-visual fill" aria-hidden="true">
+      <div class="mini-card"><small>Template</small><p>Halo Kak <span class="var">nama</span>, ongkir ke <span class="var">kota</span> Rp18.000 ya.</p></div>
+      <div class="arrow">↓</div>
+      <div class="mini-card out"><small>Terkirim ke Rina · Bandung</small><p>Halo Kak <b>Rina</b>, ongkir ke <b>Bandung</b> Rp18.000 ya.</p></div>
+    </div>
+  </div>
+
+  <div class="feature flip" data-reveal>
+    <div class="f-copy">
+      <h3>Di HP dan di WhatsApp Web</h3>
+      <p>Template dan kontak yang sama ada di keyboard Android dan di Chrome lewat extension ScriptGo. Ubah sekali, langsung sinkron.</p>
+    </div>
+    <div class="f-visual devices" aria-hidden="true">
+      <div class="laptop"><div class="lscreen"><span class="chip"><b>/ongkir</b> Info ongkir</span></div><div class="lbase"></div></div>
+      <div class="mphone"><span class="chip"><b>/ongkir</b></span></div>
+    </div>
+  </div>
+
+  <div class="feature" data-reveal>
+    <div class="f-copy">
+      <h3>Keyboard yang tidak pernah online</h3>
+      <p>Keyboard ScriptGo tidak punya akses internet. Yang kamu ketik tidak pernah dikirim ke mana pun, dan statistik hanya menghitung jumlah karakter, bukan isinya.</p>
+    </div>
+    <div class="f-visual privacy" aria-hidden="true">
+      <div class="shield"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <p><b>0 byte</b> ketikanmu dikirim ke internet</p>
+    </div>
+  </div>
+</section>
+
+<section class="maker" aria-labelledby="h-maker">
+  <div class="maker-card" data-reveal>
+    <span class="avatar" aria-hidden="true">R</span>
+    <div>
+      <p class="label">Catatan dari pembuat</p>
+      <h2 id="h-maker">Kenapa ScriptGo dibuat</h2>
+      <p class="big">Aku bikin ScriptGo karena capek lihat teman-teman seller mengetik jawaban yang sama puluhan kali sehari. Template di catatan HP lambat, fitur balas cepat WhatsApp Business terbatas. ScriptGo bikin jawaban itu keluar dari keyboard, sudah lengkap dengan nama pelanggan.</p>
+      <p class="sign">Rizki, pembuat ScriptGo</p>
+    </div>
+  </div>
+</section>
+
+<!-- Shown once real testimonials from beta testers exist. -->
+<section id="testimonials" aria-labelledby="h-testi" hidden>
+  <h2 id="h-testi">Kata penguji beta</h2>
+</section>
+
+<section id="harga" aria-labelledby="h-harga">
+  <p class="label" data-reveal>Harga</p>
+  <h2 id="h-harga" data-reveal>Mulai gratis. Pendaftar beta dapat harga khusus.</h2>
+  <div class="plans">
+    <article class="plan" data-reveal style="--i:0">
+      <h3>Gratis</h3>
+      <p class="price">Rp0</p>
+      <ul><li>Keyboard ScriptGo lengkap</li><li>20 template, kontak tanpa batas</li><li>30 kali pakai template</li><li>Trial Pro 14 hari</li><li>5 kali coba AI bantu tulis</li></ul>
+      <a class="btn ghost full" href="daftar" data-cta>Mulai gratis</a>
+    </article>
+    <article class="plan featured" data-reveal style="--i:1">
+      <span class="tag">Harga khusus pendaftar beta</span>
+      <h3>Pro</h3>
+      <p class="price"><s>Rp49.000</s> Rp24.500 <small>/bulan</small></p>
+      <p class="note">Berlaku 12 bulan untuk pendaftar beta</p>
+      <ul><li>Template dan pemakaian tanpa batas</li><li>Sync dan backup otomatis</li><li>Chrome extension untuk WhatsApp Web</li><li>AI bantu tulis 20 kali sehari</li><li>Statistik waktu yang dihemat</li></ul>
+      <a class="btn grad full" href="bayar" id="subscribe">Langganan Pro</a>
+    </article>
+    <article class="plan" data-reveal style="--i:2">
+      <span class="tag soft">Hemat 20%</span>
+      <h3>Tim</h3>
+      <p class="price">Rp39.000 <small>/admin/bulan</small></p>
+      <p class="note">Minimal 2 admin</p>
+      <ul><li>Semua fitur Pro untuk tiap admin</li><li>Template dan kontak bersama satu toko</li><li>Statistik per admin</li></ul>
+      <p class="soon">Segera hadir</p>
+    </article>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="h-faq">
+  <div class="faq-wrap">
+    <div class="faq-intro" data-reveal>
+      <p class="label">FAQ</p>
+      <h2 id="h-faq">Pertanyaan yang sering muncul</h2>
+      <p class="muted">Soal keamanan, cara ikut beta, sampai bayarnya nanti. Yang belum terjawab, tanya langsung saja.</p>
+      <div class="faq-help">
+        <span class="faq-help-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+        <div>
+          <b>Masih ada yang bikin ragu?</b>
+          <p class="muted">Kirim email, dibalas langsung oleh pembuat ScriptGo.</p>
+          <a class="btn ghost small" href="mailto:halo@scriptgo.id">halo@scriptgo.id</a>
+        </div>
+      </div>
+    </div>
+    <div class="faq" data-reveal>
+      <details name="faq" open><summary>Apakah aman? Keyboard bisa membaca yang aku ketik?</summary><p>Semua keyboard di Android memunculkan peringatan yang sama. Bedanya, keyboard ScriptGo tidak punya akses internet, jadi yang kamu ketik tidak pernah keluar dari HP. Yang disinkronkan hanya template dan kontak, dan itu pun kalau kamu masuk ke akun.</p></details>
+      <details name="faq"><summary>Bisa dipakai di aplikasi apa saja?</summary><p>Di semua aplikasi yang memakai keyboard: WhatsApp, WhatsApp Business, Instagram, chat marketplace, email, dan lainnya. Di laptop, Chrome extension ScriptGo bekerja di WhatsApp Web dan kolom teks lain di browser.</p></details>
+      <details name="faq"><summary>Bedanya dengan balas cepat di WhatsApp Business?</summary><p>Balas cepat cuma ada di WhatsApp dan tidak bisa mengisi nama atau data pelanggan. ScriptGo jalan di semua aplikasi chat, mengisi nama dan kota dari kontakmu, dan template yang sama bisa dipakai di laptop.</p></details>
+      <details name="faq"><summary>Kalau ganti HP, template dan kontakku hilang?</summary><p>Tidak, asal kamu masuk ke akun. Template, kontak, dan pengaturan keyboard tersimpan di akunmu dan kembali begitu kamu masuk di HP baru atau di Chrome.</p></details>
+      <details name="faq"><summary>Ada versi iPhone?</summary><p>Belum. Sekarang ScriptGo ada di Android dan di Chrome (laptop). Tetap daftar dan pilih iPhone, supaya kami tahu berapa banyak yang menunggu.</p></details>
+      <details name="faq"><summary>Bagaimana cara ikut beta?</summary><p>Daftar dengan email, pilih Android, lalu klik link konfirmasi yang kami kirim. Undangan Google Play dikirim ke email itu, dan ScriptGo dipasang dari Play Store seperti aplikasi biasa. Pakai email akun Google yang ada di HP kamu, ya.</p></details>
+      <details name="faq"><summary>Nanti bayarnya bagaimana?</summary><p>Lewat scriptgo.id dengan QRIS, e-wallet, atau transfer bank. Harga khusus pendaftar beta otomatis berlaku untuk email yang sudah kamu konfirmasi.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="closing" aria-labelledby="h-closing">
+  <div class="closing-card" data-reveal>
+    <h2 id="h-closing">Balasan 30 detik jadi 3 detik.</h2>
+    <p>Gratis selama beta. Daftar cukup dengan email.</p>
+    <a class="btn grad" href="daftar" data-cta>Daftar beta gratis</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div><a class="brand" href="./"><img src="mark.svg" alt="" width="28" height="28" /> ScriptGo</a><p class="muted">Template balasan dan kontak pelanggan, langsung di keyboard.</p></div>
+  <div class="links"><a href="privacy.html">Kebijakan privasi</a><a href="hapus-akun.html">Hapus akun</a><a href="mailto:halo@scriptgo.id">halo@scriptgo.id</a></div>
+</footer>
+
+<script src="supabase.js" defer></script>
+<script src="landing.js" defer></script>
+</body>
+</html>

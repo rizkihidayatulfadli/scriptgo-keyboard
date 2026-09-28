@@ -1,0 +1,15 @@
+{
+  "magic_link": "Kode masuk ScriptGo: {{ .Token }}",
+  "confirmation": "Kode masuk ScriptGo: {{ .Token }}",
+  "invite": "Kamu diundang ke ScriptGo",
+  "email_change": "Konfirmasi email baru ScriptGo: {{ .Token }}",
+  "recovery": "Kode pemulihan akun ScriptGo: {{ .Token }}",
+  "reauthentication": "Kode verifikasi ScriptGo: {{ .Token }}",
+  "password_changed_notification": "Kata sandi akun ScriptGo diubah",
+  "email_changed_notification": "Email akun ScriptGo diubah",
+  "phone_changed_notification": "Nomor HP akun ScriptGo diubah",
+  "identity_linked_notification": "Cara masuk baru ditambahkan ke akun ScriptGo",
+  "identity_unlinked_notification": "Cara masuk dihapus dari akun ScriptGo",
+  "mfa_factor_enrolled_notification": "Verifikasi baru ditambahkan ke akun ScriptGo",
+  "mfa_factor_unenrolled_notification": "Verifikasi dihapus dari akun ScriptGo"
+}

@@ -1,0 +1,27 @@
+// magic-keyboard: release signing and version for Play builds, from environment variables set in CI
+// (.github/workflows/release.yml). Kept out of build.gradle.kts so HeliBoard updates merge cleanly.
+// Without the variables, release builds stay unsigned exactly as upstream.
+
+def keystorePath = System.getenv("MK_KEYSTORE_PATH")
+
+android {
+    if (keystorePath) {
+        signingConfigs {
+            magicKeyboard {
+                storeFile file(keystorePath)
+                storePassword System.getenv("MK_KEYSTORE_PASSWORD")
+                keyAlias System.getenv("MK_KEY_ALIAS")
+                keyPassword System.getenv("MK_KEY_PASSWORD")
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.magicKeyboard
+            }
+        }
+    }
+    def versionCodeOverride = System.getenv("MK_VERSION_CODE")
+    if (versionCodeOverride) defaultConfig.versionCode = versionCodeOverride.toInteger()
+    def versionNameOverride = System.getenv("MK_VERSION_NAME")
+    if (versionNameOverride) defaultConfig.versionName = versionNameOverride
+}

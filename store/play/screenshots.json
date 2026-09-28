@@ -1,0 +1,13 @@
+{
+  "$comment": "Screenshots for Google Play, in order. Put the raw phone screenshots in raw/ with these file names (PNG or JPG, portrait), then run: node store/play/render.mjs. Captions: short, no prices, no 'terbaik' or '#1' (Play policy).",
+  "shots": [
+    { "file": "1-saran.png", "title": "Ketik /ongkir,", "accent": "balasan langsung jadi", "sub": "Template muncul di atas keyboard, di WhatsApp dan app lain" },
+    { "file": "2-form.png", "title": "Nama dan kota pelanggan", "accent": "terisi sendiri", "sub": "Variabel diisi dari kontak, tinggal pilih pelanggannya" },
+    { "file": "3-template.png", "title": "Semua balasan", "accent": "rapi di satu tempat", "sub": "Kelompokkan dengan tag, cari dengan cepat" },
+    { "file": "4-editor.png", "title": "Bikin template", "accent": "tanpa ribet", "sub": "Sisipkan nama, kota, tanggal, atau pilihan kurir" },
+    { "file": "5-ai.png", "title": "Buat template", "accent": "dengan AI", "sub": "Tulis kebutuhannya, AI menyusun balasannya" },
+    { "file": "6-kontak.png", "title": "Catatan pelanggan", "accent": "di keyboard kamu", "sub": "Kontak dan data tambahan, siap dipakai di template" },
+    { "file": "7-laptop.png", "title": "Lanjut di laptop", "accent": "lewat Chrome", "sub": "Template yang sama di WhatsApp Web" },
+    { "file": "8-hemat.png", "title": "Lihat waktu", "accent": "yang kamu hemat", "sub": "Statistik pemakaian tanpa menyimpan isi chat" }
+  ]
+}

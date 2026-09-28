@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<meta name="referrer" content="no-referrer" />
+<title>Konfirmasi email · ScriptGo</title>
+<meta name="theme-color" content="#0B1220" />
+<link rel="icon" href="favicon.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="landing.css" />
+<link rel="stylesheet" href="signup.css" />
+</head>
+<body class="landing signup">
+<header class="bar"><a class="brand" href="./"><img src="mark.svg" alt="" width="32" height="32" /> ScriptGo</a></header>
+<main class="card-wrap" aria-live="polite">
+  <div id="checking" class="card center"><p>Mengonfirmasi email…</p></div>
+  <div id="ok" class="card center" hidden>
+    <div class="icon-ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h1>Email terkonfirmasi 🎉</h1>
+    <p>Kamu sudah masuk daftar beta. Pengguna Android akan dapat email undangan Google Play dari kami.</p>
+    <div class="share">
+      <span class="flabel">Ajak teman, dapat +1 bulan Pro gratis per teman (maksimal 6)</span>
+      <div class="copy-row"><input id="ref-link" readonly aria-label="Link ajak teman" /><button type="button" class="btn small" id="ref-copy">Salin</button></div>
+      <a class="btn grad full" id="ref-wa" target="_blank" rel="noopener">Bagikan ke WhatsApp</a>
+    </div>
+  </div>
+  <div id="bad" class="card center" hidden>
+    <h1>Link ini sudah tidak berlaku</h1>
+    <p class="muted">Link konfirmasi hanya bisa dipakai sekali dan berlaku 24 jam.</p>
+    <a class="btn grad full" href="daftar">Kirim link baru</a>
+  </div>
+</main>
+<footer class="foot"><div class="links"><a href="./">Beranda</a><a href="privacy.html">Kebijakan privasi</a><a href="mailto:halo@scriptgo.id">halo@scriptgo.id</a></div></footer>
+<script src="supabase.js" defer></script>
+<script src="konfirmasi.js" defer></script>
+</body>
+</html>

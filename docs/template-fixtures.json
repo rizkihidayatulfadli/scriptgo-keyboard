@@ -1,0 +1,258 @@
+[
+  {
+    "name": "teks biasa tanpa variabel",
+    "template": "Halo kak, ada yang bisa dibantu?",
+    "expected": { "variables": [], "text": "Halo kak, ada yang bisa dibantu?", "cursor": null }
+  },
+  {
+    "name": "nama diambil dari kontak",
+    "template": "Halo {nama}!",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "expected": { "variables": [{ "key": "nama" }], "text": "Halo Budi!", "cursor": null }
+  },
+  {
+    "name": "default dipakai jika tidak ada kontak",
+    "template": "Halo {nama|Kak}!",
+    "expected": { "variables": [{ "key": "nama", "default": "Kak" }], "text": "Halo Kak!", "cursor": null }
+  },
+  {
+    "name": "nilai kontak mengalahkan default",
+    "template": "Halo {nama|Kak}!",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "expected": { "variables": [{ "key": "nama", "default": "Kak" }], "text": "Halo Budi!", "cursor": null }
+  },
+  {
+    "name": "input user mengalahkan nilai kontak",
+    "template": "Halo {nama}!",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "inputs": { "nama": "Pak Budi" },
+    "expected": { "variables": [{ "key": "nama" }], "text": "Halo Pak Budi!", "cursor": null }
+  },
+  {
+    "name": "nilai kontak kosong jatuh ke default",
+    "template": "Diskon {diskon|0}%",
+    "contact": { "name": "Budi", "phones": [], "fields": { "diskon": "" } },
+    "expected": { "variables": [{ "key": "diskon", "default": "0" }], "text": "Diskon 0%", "cursor": null }
+  },
+  {
+    "name": "key tidak peka huruf besar kecil",
+    "template": "Dikirim ke {Kota}",
+    "contact": { "name": "Budi", "phones": [], "fields": { "kota": "Bandung" } },
+    "expected": { "variables": [{ "key": "kota" }], "text": "Dikirim ke Bandung", "cursor": null }
+  },
+  {
+    "name": "pilihan memakai opsi pertama sebagai default",
+    "template": "Kirim via {kurir:JNE, J&T, SiCepat}",
+    "expected": {
+      "variables": [{ "key": "kurir", "options": ["JNE", "J&T", "SiCepat"] }],
+      "text": "Kirim via JNE",
+      "cursor": null
+    }
+  },
+  {
+    "name": "pilihan diisi dari input user",
+    "template": "Kirim via {kurir:JNE,J&T,SiCepat}",
+    "inputs": { "kurir": "J&T" },
+    "expected": {
+      "variables": [{ "key": "kurir", "options": ["JNE", "J&T", "SiCepat"] }],
+      "text": "Kirim via J&T",
+      "cursor": null
+    }
+  },
+  {
+    "name": "koma di-escape di dalam opsi",
+    "template": "Ukuran {ukuran:S,M,L\\,XL}",
+    "inputs": { "ukuran": "L,XL" },
+    "expected": {
+      "variables": [{ "key": "ukuran", "options": ["S", "M", "L,XL"] }],
+      "text": "Ukuran L,XL",
+      "cursor": null
+    }
+  },
+  {
+    "name": "key berulang hanya ditanyakan sekali",
+    "template": "{nama|Kak}, terima kasih ya {nama}",
+    "expected": { "variables": [{ "key": "nama", "default": "Kak" }], "text": "Kak, terima kasih ya Kak", "cursor": null }
+  },
+  {
+    "name": "nomor kontak dalam format nasional",
+    "template": "WA: {nomor}",
+    "contact": { "name": "Budi", "phones": ["+6281234567890", "+6285700000000"], "fields": {} },
+    "expected": { "variables": [{ "key": "nomor" }], "text": "WA: 081234567890", "cursor": null }
+  },
+  {
+    "name": "variabel bawaan tanggal, hari, dan jam",
+    "template": "Laporan {@hari}, {@tanggal} pukul {@jam}",
+    "now": "2026-09-26T14:30:00",
+    "expected": { "variables": [], "text": "Laporan Sabtu, 26 September 2026 pukul 14.30", "cursor": null }
+  },
+  {
+    "name": "variabel bawaan tanggal pendek, bulan, dan tahun",
+    "template": "{@tanggal_pendek} | {@bulan} {@tahun}",
+    "now": "2026-01-05T08:05:00",
+    "expected": { "variables": [], "text": "05/01/2026 | Januari 2026", "cursor": null }
+  },
+  {
+    "name": "jam dengan nol di depan",
+    "template": "Masuk {@jam}",
+    "now": "2026-09-26T07:05:00",
+    "expected": { "variables": [], "text": "Masuk 07.05", "cursor": null }
+  },
+  {
+    "name": "posisi kursor",
+    "template": "Halo {nama}, {@kursor} terima kasih",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "expected": { "variables": [{ "key": "nama" }], "text": "Halo Budi,  terima kasih", "cursor": 11 }
+  },
+  {
+    "name": "hanya kursor pertama yang dipakai",
+    "template": "A{@kursor}B{@kursor}C",
+    "expected": { "variables": [], "text": "ABC", "cursor": 1 }
+  },
+  {
+    "name": "variabel bawaan tidak dikenal jadi teks biasa",
+    "template": "Cuaca {@cuaca}",
+    "expected": { "variables": [], "text": "Cuaca {@cuaca}", "cursor": null }
+  },
+  {
+    "name": "kurung kurawal di-escape",
+    "template": "Pakai kode \\{PROMO\\} ya",
+    "expected": { "variables": [], "text": "Pakai kode {PROMO} ya", "cursor": null }
+  },
+  {
+    "name": "kurung kurawal tidak ditutup jadi teks biasa",
+    "template": "Harga {promo",
+    "expected": { "variables": [], "text": "Harga {promo", "cursor": null }
+  },
+  {
+    "name": "key dengan spasi jadi teks biasa",
+    "template": "Total {harga total}",
+    "expected": { "variables": [], "text": "Total {harga total}", "cursor": null }
+  },
+  {
+    "name": "kurung kosong jadi teks biasa",
+    "template": "Isi {} di sini",
+    "expected": { "variables": [], "text": "Isi {} di sini", "cursor": null }
+  },
+  {
+    "name": "variabel tanpa nilai menjadi string kosong",
+    "template": "Catatan: {catatan}",
+    "expected": { "variables": [{ "key": "catatan" }], "text": "Catatan: ", "cursor": null }
+  },
+  {
+    "name": "template multi-baris",
+    "template": "Halo {nama|Kak}\nTotal: Rp{total}\nTerima kasih",
+    "inputs": { "total": "150.000" },
+    "expected": {
+      "variables": [{ "key": "nama", "default": "Kak" }, { "key": "total" }],
+      "text": "Halo Kak\nTotal: Rp150.000\nTerima kasih",
+      "cursor": null
+    }
+  },
+  {
+    "name": "default boleh mengandung titik dua",
+    "template": "Datang jam {jam|10:00}",
+    "expected": { "variables": [{ "key": "jam", "default": "10:00" }], "text": "Datang jam 10:00", "cursor": null }
+  },
+  {
+    "name": "opsi boleh mengandung garis tegak",
+    "template": "Via {kurir:JNE|Reguler,J&T}",
+    "expected": {
+      "variables": [{ "key": "kurir", "options": ["JNE|Reguler", "J&T"] }],
+      "text": "Via JNE|Reguler",
+      "cursor": null
+    }
+  },
+  {
+    "name": "nomor kontak luar negeri tetap E.164",
+    "template": "WA: {nomor}",
+    "contact": { "name": "Tan", "phones": ["+6591234567"], "fields": {} },
+    "expected": { "variables": [{ "key": "nomor" }], "text": "WA: +6591234567", "cursor": null }
+  },
+  {
+    "name": "tanpa form: variabel tanpa nilai ditandai",
+    "template": "{nama|Kak}, total belanja Rp{total}",
+    "markMissing": true,
+    "expected": {
+      "variables": [{ "key": "nama", "default": "Kak" }, { "key": "total" }],
+      "text": "Kak, total belanja Rp[total]",
+      "cursor": null
+    }
+  },
+  {
+    "name": "tanpa form: pilihan dan kontak tidak ditandai",
+    "template": "{nama} via {kurir:JNE,J&T} ke {kota}",
+    "contact": { "name": "Budi", "phones": [], "fields": { "kota": "" } },
+    "markMissing": true,
+    "expected": {
+      "variables": [{ "key": "nama" }, { "key": "kurir", "options": ["JNE", "J&T"] }, { "key": "kota" }],
+      "text": "Budi via JNE ke [kota]",
+      "cursor": null
+    }
+  },
+  {
+    "name": "tanpa form: input kosong tetap dihitung",
+    "template": "Catatan: {catatan}",
+    "inputs": { "catatan": "" },
+    "markMissing": true,
+    "expected": { "variables": [{ "key": "catatan" }], "text": "Catatan: ", "cursor": null }
+  },
+  {
+    "name": "fallback field dipakai jika kontak tidak punya nilai",
+    "template": "Kirim ke {kota} ya",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "fieldFallbacks": { "kota": "Bandung" },
+    "expected": { "variables": [{ "key": "kota" }], "text": "Kirim ke Bandung ya", "cursor": null }
+  },
+  {
+    "name": "fallback field dipakai jika nilai kontak kosong",
+    "template": "Kirim ke {kota} ya",
+    "contact": { "name": "Budi", "phones": [], "fields": { "kota": "" } },
+    "fieldFallbacks": { "kota": "Bandung" },
+    "expected": { "variables": [{ "key": "kota" }], "text": "Kirim ke Bandung ya", "cursor": null }
+  },
+  {
+    "name": "fallback field dipakai tanpa kontak",
+    "template": "Halo {panggilan}",
+    "fieldFallbacks": { "panggilan": "Kak" },
+    "expected": { "variables": [{ "key": "panggilan" }], "text": "Halo Kak", "cursor": null }
+  },
+  {
+    "name": "nilai kontak mengalahkan fallback field",
+    "template": "Kirim ke {kota} ya",
+    "contact": { "name": "Budi", "phones": [], "fields": { "kota": "Medan" } },
+    "fieldFallbacks": { "kota": "Bandung" },
+    "expected": { "variables": [{ "key": "kota" }], "text": "Kirim ke Medan ya", "cursor": null }
+  },
+  {
+    "name": "input user mengalahkan fallback field",
+    "template": "Kirim ke {kota} ya",
+    "inputs": { "kota": "Solo" },
+    "fieldFallbacks": { "kota": "Bandung" },
+    "expected": { "variables": [{ "key": "kota" }], "text": "Kirim ke Solo ya", "cursor": null }
+  },
+  {
+    "name": "default di template mengalahkan fallback field",
+    "template": "Kirim ke {kota|Jakarta} ya",
+    "fieldFallbacks": { "kota": "Bandung" },
+    "expected": { "variables": [{ "key": "kota", "default": "Jakarta" }], "text": "Kirim ke Jakarta ya", "cursor": null }
+  },
+  {
+    "name": "opsi pertama di template mengalahkan fallback field",
+    "template": "Via {kurir:JNE,J&T}",
+    "fieldFallbacks": { "kurir": "SiCepat" },
+    "expected": { "variables": [{ "key": "kurir", "options": ["JNE", "J&T"] }], "text": "Via JNE", "cursor": null }
+  },
+  {
+    "name": "tanpa form: fallback field tidak ditandai, fallback kosong ditandai",
+    "template": "{panggilan} {nama}, ke {kota}",
+    "contact": { "name": "Budi", "phones": [], "fields": {} },
+    "fieldFallbacks": { "panggilan": "Kak", "kota": "" },
+    "markMissing": true,
+    "expected": {
+      "variables": [{ "key": "panggilan" }, { "key": "nama" }, { "key": "kota" }],
+      "text": "Kak Budi, ke [kota]",
+      "cursor": null
+    }
+  }
+]

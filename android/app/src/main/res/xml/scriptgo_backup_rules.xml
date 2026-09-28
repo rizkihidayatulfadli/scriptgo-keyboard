@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- magic-keyboard: Android backup (up to Android 11). Everything is backed up except the
+     sign-in tokens in sync.xml, so a restored phone signs in again instead of reusing them. -->
+<full-backup-content>
+    <exclude domain="sharedpref" path="sync.xml" />
+    <exclude domain="device_sharedpref" path="sync.xml" />
+</full-backup-content>

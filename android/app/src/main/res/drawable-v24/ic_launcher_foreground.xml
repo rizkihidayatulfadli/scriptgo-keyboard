@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- magic-keyboard: ScriptGo logo C2 (design/logo/scriptgo-mark.svg), scaled 0.58 so the keycap stays
+     inside the 72dp visible area even under a circular mask. Only referenced from mipmap-anydpi-v26. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:translateX="25" android:translateY="25" android:scaleX="0.58" android:scaleY="0.58">
+        <path android:pathData="M32,16h36a24,24 0,0 1,24 24v28a24,24 0,0 1,-24 24h-36a24,24 0,0 1,-24 -24v-28a24,24 0,0 1,24 -24z">
+            <aapt:attr name="android:fillColor">
+                <gradient android:type="linear" android:startX="8" android:startY="16" android:endX="92" android:endY="92"
+                    android:startColor="#FF0284C7" android:endColor="#FF4F46E5" />
+            </aapt:attr>
+        </path>
+        <path android:pathData="M34,8h32a20,20 0,0 1,20 20v28a20,20 0,0 1,-20 20h-32a20,20 0,0 1,-20 -20v-28a20,20 0,0 1,20 -20z">
+            <aapt:attr name="android:fillColor">
+                <gradient android:type="linear" android:startX="14" android:startY="8" android:endX="86" android:endY="76"
+                    android:startColor="#FF0EA5E9" android:endColor="#FF6366F1" />
+            </aapt:attr>
+        </path>
+        <path android:pathData="M18,22a24,10 0,1 0,48 0a24,10 0,1 0,-48 0z">
+            <aapt:attr name="android:fillColor">
+                <gradient android:type="linear" android:startX="42" android:startY="12" android:endX="42" android:endY="32"
+                    android:startColor="#8CFFFFFF" android:endColor="#00FFFFFF" />
+            </aapt:attr>
+        </path>
+        <path android:pathData="M59,24L43,60" android:strokeColor="#FFFFFFFF" android:strokeWidth="9" android:strokeLineCap="round" />
+    </group>
+</vector>

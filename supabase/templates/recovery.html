@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&display=swap" rel="stylesheet">
+<title>Pulihkan akunmu</title>
+</head>
+<body style="margin:0;padding:0;background:#EEF2F6;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#EEF2F6;">Kode pemulihan {{ .Token }}. Berlaku 1 jam.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEF2F6;font-family:Urbanist, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <tr><td align="center" style="padding:32px 16px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;">
+      <tr><td style="padding:0 8px 20px;">
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td style="vertical-align:middle;"><img src="https://scriptgo.id/icon.png?v=a87be887" width="36" height="36" alt="" style="display:block;border:0;"></td>
+          <td style="vertical-align:middle;padding-left:10px;font-size:20px;font-weight:800;letter-spacing:-0.3px;color:#0E1116;">ScriptGo</td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="background:#FFFFFF;border-radius:28px;padding:0;overflow:hidden;">
+        <div style="padding:32px 28px;">
+        <h1 style="margin:0 0 12px;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-0.5px;color:#0E1116;">Pulihkan akunmu</h1>
+        <p style="margin:0 0 16px;font-size:16px;line-height:1.6;color:#5B6675;">Ada permintaan untuk memulihkan akses ke akun ScriptGo kamu. Masukkan kode ini di aplikasi:</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:4px 0 20px;">
+  <tr><td align="center" style="background:#E0F2FE;border-radius:20px;padding:20px 12px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0369A1;margin-bottom:6px;">Kode pemulihan</div>
+    <div style="font-size:38px;line-height:1.1;font-weight:800;letter-spacing:10px;color:#0E1116;font-family:Urbanist, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ .Token }}</div>
+  </td></tr>
+</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 16px;">
+  <tr>
+    <td style="border-top:1px solid #E3E8EF;width:45%;"></td>
+    <td align="center" style="font-size:13px;font-weight:700;color:#5B6675;padding:0 12px;white-space:nowrap;">atau</td>
+    <td style="border-top:1px solid #E3E8EF;width:45%;"></td>
+  </tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0 20px;">
+  <tr><td style="background:#0E1116;border-radius:999px;">
+    <a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:15px 28px;font-size:16px;font-weight:700;color:#FFFFFF;text-decoration:none;font-family:Urbanist, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">Pulihkan akun</a>
+  </td></tr>
+</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 0;">
+  <tr><td style="background:#F5F7FA;border-radius:16px;padding:14px 16px;font-size:14px;line-height:1.55;color:#5B6675;">Berlaku 1 jam dan hanya bisa dipakai sekali. Kalau kamu tidak memintanya, abaikan email ini.</td></tr>
+</table>
+        </div>
+      </td></tr>
+      <tr><td style="padding:20px 8px 0;font-size:13px;line-height:1.6;color:#5B6675;">
+        Email otomatis dari ScriptGo untuk {{ .Email }}. Tim ScriptGo tidak pernah meminta kode lewat chat atau telepon.<br>
+        <a href="https://scriptgo.id" style="color:#0369A1;font-weight:600;text-decoration:none;">scriptgo.id</a> ·
+        <a href="https://scriptgo.id/privacy.html" style="color:#5B6675;text-decoration:underline;">Kebijakan privasi</a>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>

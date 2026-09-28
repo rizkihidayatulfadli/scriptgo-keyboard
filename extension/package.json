@@ -1,0 +1,27 @@
+{
+  "name": "scriptgo-extension",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Chrome extension: /shortcut templates with contact variables",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "node e2e/run.mjs"
+  },
+  "devDependencies": {
+    "@lexical/rich-text": "^0.51.0",
+    "@types/chrome": "^0.3.0",
+    "@types/node": "^26.6.3",
+    "esbuild": "^0.28.2",
+    "lexical": "^0.51.0",
+    "playwright": "1.56.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  },
+  "dependencies": {
+    "libphonenumber-js": "^1.13.14"
+  }
+}

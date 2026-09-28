@@ -1,0 +1,18 @@
+[
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png", "size": 48, "background": "#EAF7F5", "shape": "square", "padding": 0.18 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png", "size": 72, "background": "#EAF7F5", "shape": "square", "padding": 0.18 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png", "size": 96, "background": "#EAF7F5", "shape": "square", "padding": 0.18 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png", "size": 144, "background": "#EAF7F5", "shape": "square", "padding": 0.18 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png", "size": 192, "background": "#EAF7F5", "shape": "square", "padding": 0.18 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png", "size": 48, "background": "#EAF7F5", "shape": "circle", "padding": 0.22 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png", "size": 72, "background": "#EAF7F5", "shape": "circle", "padding": 0.22 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png", "size": 96, "background": "#EAF7F5", "shape": "circle", "padding": 0.22 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png", "size": 144, "background": "#EAF7F5", "shape": "circle", "padding": 0.22 },
+  { "source": "logo/scriptgo-mark.svg", "out": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png", "size": 192, "background": "#EAF7F5", "shape": "circle", "padding": 0.22 },
+  { "source": "logo/scriptgo-mark-small.svg", "out": "extension/static/icons/icon16.png", "size": 16, "background": null, "shape": "none", "padding": 0 },
+  { "source": "logo/scriptgo-mark.svg", "out": "extension/static/icons/icon32.png", "size": 32, "background": null, "shape": "none", "padding": 0.04 },
+  { "source": "logo/scriptgo-mark.svg", "out": "extension/static/icons/icon48.png", "size": 48, "background": null, "shape": "none", "padding": 0.04 },
+  { "source": "logo/scriptgo-mark.svg", "out": "extension/static/icons/icon128.png", "size": 128, "background": null, "shape": "none", "padding": 0.04 },
+  { "source": "logo/scriptgo-mark.svg", "out": "site/static/icon.png", "size": 128, "background": null, "shape": "none", "padding": 0.04 },
+  { "source": "logo/scriptgo-mark-small.svg", "out": "site/static/favicon.png", "size": 32, "background": null, "shape": "none", "padding": 0 }
+]

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>ScriptGo</title>
+  <link rel="stylesheet" href="ui.css" />
+  <style>
+    body { width: 360px; margin: 0; background: var(--bg); }
+    /* Sky glow behind the content, as in the app. */
+    body::before { content: ""; position: fixed; inset: -90px -70px auto auto; width: 280px; height: 240px; background: radial-gradient(closest-side, var(--glow), transparent); opacity: .9; pointer-events: none; }
+    #app { position: relative; padding: 20px; display: grid; gap: 14px; }
+  </style>
+</head>
+<body>
+  <main id="app"></main>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

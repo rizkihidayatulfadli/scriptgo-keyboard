@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://hsanqncbfurjhnshdpnc.supabase.co; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+<title>ScriptGo Admin</title>
+<link rel="icon" href="mark.svg" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="mark.svg" alt="" width="30" height="30" /> ScriptGo <span class="tag">Admin</span></div>
+  <div class="who" id="who" hidden><span id="who-email"></span><button class="ghost small" id="sign-out" type="button">Keluar</button></div>
+</header>
+
+<main>
+  <!-- Sign-in: an email code, as on /bayar; only accounts in private.admins get past admin_check. -->
+  <section id="signin" class="card narrow">
+    <h1>Masuk</h1>
+    <form id="email-form" novalidate>
+      <label for="email">Email admin</label>
+      <input id="email" type="email" autocomplete="email" required />
+      <button class="primary" type="submit" id="send-code">Kirim kode</button>
+    </form>
+    <form id="code-form" hidden novalidate>
+      <label for="code">Kode 6 digit dari email <b id="code-email"></b></label>
+      <input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" />
+      <button class="primary" type="submit" id="verify">Masuk</button>
+      <button class="ghost" type="button" id="change-email">Ganti email</button>
+    </form>
+    <p class="msg" id="signin-msg" role="status"></p>
+  </section>
+
+  <section id="app" hidden>
+    <nav class="tabs" role="tablist" aria-label="Menu">
+      <button role="tab" data-tab="overview" aria-selected="true">Ringkasan</button>
+      <button role="tab" data-tab="beta" aria-selected="false">Beta &amp; waitlist</button>
+      <button role="tab" data-tab="users" aria-selected="false">Pengguna &amp; paket</button>
+      <button role="tab" data-tab="orders" aria-selected="false">Pembayaran</button>
+      <button role="tab" data-tab="inbox" aria-selected="false">Laporan &amp; A/B</button>
+    </nav>
+    <p class="msg" id="app-msg" role="status"></p>
+    <div id="view"></div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="admin.js"></script>
+</body>
+</html>
